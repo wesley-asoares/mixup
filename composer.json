@@ -1,12 +1,12 @@
 {
-  "name": "upflex/mixup",
+  "name": "dotgenius/mixup",
   "description": "Estrutura base para plugin WordPress",
   "type": "library",
   "license": "MIT",
   "authors": [
     {
-      "name": "Agência UPFlex",
-      "email": "wesley@upflex.com.br"
+      "name": "Wesley Andrade",
+      "email": "wesley.asoares.br@gmail.com"
     }
   ],
   "minimum-stability": "stable",
