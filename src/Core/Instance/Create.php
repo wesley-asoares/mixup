@@ -27,7 +27,13 @@ abstract class Create
                     return [];
                 }
 
-                $const_params = $reflection->getConstructor()->getParameters();
+                $constructor = $reflection->getConstructor();
+                
+                if ($constructor === null) {
+                    return [];
+                }
+
+                $const_params = $constructor != null ? $constructor->getParameters() : [];
                 $class_child_params = self::getParamsClass($reflection);
 
                 if (count($const_params) <= count($class_child_params)) {
@@ -71,6 +77,10 @@ abstract class Create
     {
         $class_child_params = [];
         $constructor = $reflection->getConstructor();
+        
+        if ($constructor === null) {
+            return [];
+        }
 
         foreach ($constructor->getParameters() as $param) {
             $class_child_params[] = self::$params[$param->name] ?? null;
